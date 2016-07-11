@@ -36,7 +36,7 @@ int building[20][8] = {
     {0, 0, 21, 13, 7, 4, 3, 2},
     {0, 21, 13, 7, 4, 3, 2, 1}};
     
-int failed[20][8] = {
+int failed[2][8] = {
     {255, 0, 255, 0, 255, 0, 255, 0},
     {0, 255, 0, 255, 0, 255, 0, 255}};
 
@@ -141,28 +141,6 @@ void setup() {
         delay(100);
         leds.show();
     }
-
-    for (int i = 255; i >= 0; i--)
-    {
-        for (int j = 0; j < LED_COUNT; j++)
-        {
-            leds.setPixelColor(j, 0, 0, 0);
-        }
-        
-        delay(5);
-        leds.show();
-    }
-
-    for (int i = 0; i <= 128; i++)
-    {
-        for (int j = 0; j < LED_COUNT; j++)
-        {
-            leds.setPixelColor(j, 0, 0, 0);
-        }
-        
-        delay(5);
-        leds.show();
-    }
 }
 
 void loop() {
@@ -198,7 +176,7 @@ void loop() {
     {
         for (int i = 0; i < 8; i++)
         {
-            leds.setPixelColor(i, failed[pos][i] * 5, 0, 0, 0);
+            leds.setPixelColor(i, failed[pos][i], 0, 0, 0);
         }
     
         pos++;
