@@ -7,7 +7,7 @@
 
 Adafruit_NeoPixel leds = Adafruit_NeoPixel(LED_COUNT, PIN, NEO_GRB + NEO_KHZ800);
 
-const char* ssid     = "BCJ2";
+const char* ssid     = "Test123";
 const char* password = "<password>";
 ESP8266WebServer server(80);
 
@@ -169,10 +169,6 @@ void loop() {
   // put your main code here, to run repeatedly:
 
     server.handleClient();
-
-    Serial.print(status);
-
-    
 
     if (status == 0)
     {
